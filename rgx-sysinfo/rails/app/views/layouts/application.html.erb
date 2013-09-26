@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tutorial (blink-rgx-led)</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'moat_icon.png' %>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+  </head>
+  <body>
+
+    <div id="wrap">
+      <div class="container">
+	<% [[notice, :success], [alert, :info], [flash[:error], :error]].each do |m, c| %>
+	<% if m.presence %>
+	<div class="alert alert-<%= c %>" style="margin-top: 1em;">
+	  <a class="close" href="#" data-dismiss="alert">×</a>
+	  <%= m %>
+	</div>
+	<% end %>
+	<% end %>
+
+	<%= yield %>
+      </div>
+      <div id="footer">
+	<div class="container">
+          <p class="muted credit">Copyright &copy; 2013 <a href="http://www.yourinventit.com">Inventit Inc.</a></p>
+	</div>
+      </div>
+    </div>
+
+  </body>
+</html>

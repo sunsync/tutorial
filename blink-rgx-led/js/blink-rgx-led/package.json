@@ -1,0 +1,19 @@
+{
+  "name": "blink-rgx-led",
+  "version": "1.0",
+  "description": "Blinks a LED equipped with Rooster GX.",
+  "bugs": {
+    "mail": "bugs@example.com"
+  },
+  "models" : {
+    "Led" : {
+      "array" : false,
+      "shared" : false,
+      "attributes" : {},
+      "commands" : {
+        "startBlink" : {"paramType" : null}
+      }
+    }
+  }
+}
+

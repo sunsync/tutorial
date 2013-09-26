@@ -1,0 +1,21 @@
+{
+  "name": "rgx-sysinfo",
+  "version": "1.0",
+  "description": "Upload RGX sysinfo.",
+  "bugs": {
+    "mail": "bugs@example.com"
+  },
+  "main" : "rgx-sysinfo.so",
+  "models" : {
+    "SysInfo" : {
+      "array" : true,
+      "shared" : false,
+      "attributes" : {
+	"totalMem" : {"type" : "int64"},
+	"freeMem" : {"type" : "int64"},
+	"procs" : {"type" : "int32"}
+      }
+    }
+  }
+}
+
