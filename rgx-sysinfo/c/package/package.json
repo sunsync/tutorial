@@ -1,7 +1,7 @@
 {
   "name": "rgx-sysinfo",
   "version": "1.0",
-  "description": "Upload RGX sysinfo.",
+  "description": "This program uploads system information of RGX.",
   "bugs": {
     "mail": "bugs@example.com"
   },
@@ -11,9 +11,9 @@
       "array" : true,
       "shared" : false,
       "attributes" : {
-	"totalMem" : {"type" : "int64"},
-	"freeMem" : {"type" : "int64"},
-	"procs" : {"type" : "int32"}
+	      "totalMem" : {"type" : "int64"},
+	      "freeMem" : {"type" : "int64"},
+	      "procs" : {"type" : "int32"}
       }
     }
   }

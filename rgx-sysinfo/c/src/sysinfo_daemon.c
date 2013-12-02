@@ -1,10 +1,10 @@
 #include <servicesync/moat.h>
+#include <stdlib.h>
 #include <ev.h>
 #include "rgx-sysinfo-debug.h"
 #include "sysinfo.h"
 
-sse_int
-moat_app_main(sse_int in_argc, sse_char* argv[]) {
+int main(int argc, char* argv[]) {
   TSysInfoUploader app;
   sse_bool bcode;
   sse_int ecode;
@@ -28,6 +28,6 @@ moat_app_main(sse_int in_argc, sse_char* argv[]) {
 
   APP_LOG_CLOSE();
 
-  return SSE_E_OK;
-}
+  return EXIT_SUCCESS;
+}  
 

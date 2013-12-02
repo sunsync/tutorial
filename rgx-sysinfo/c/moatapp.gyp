@@ -1,11 +1,9 @@
 {
   'targets': [
-    # your M2M/IoT application
     {
       'target_name': '<(package_name)',
       'sources': [ 
-	  'src/<(package_name).c',
-	  'src/rgx-sysinfo-debug.h'
+	      'src/<(package_name).c'
       ],
       'product_prefix': '',
       'type': 'shared_library',
@@ -13,13 +11,38 @@
       'include_dirs' : [
       ],
       'libraries': [
-	  '-lev',
-	  '-luuid'
+	      '-lev',
+	      '-luuid'
       ],
-      'dependencies': [ 'moatapp' ],
+      'dependencies': [ 'sysinfo', 'moatapp' ],
     },
 
-    # moat stub
+# daemon program using 'libsysinfo'.
+    {
+      'target_name': 'sysinfo_daemon',
+      'type': 'executable',
+      'clfags' : [],
+      'sources': [ 'src/sysinfo_daemon.c' ],
+      'libraries': [
+      	'-lev',
+        '-luuid',
+      ],
+      'dependencies': [ 'sysinfo', 'moatapp' ],
+    },
+
+# Sensor Device Management System static library for libangora.
+    {
+      'target_name': 'sysinfo',
+      'product_prefix': 'lib',
+      'type': 'static_library',
+      'cflags': [
+      ],
+      'sources': [
+	      'src/sysinfo.c',
+      ],
+    },
+
+# moat stub
     {
       'target_name': 'moatapp',
       'product_prefix': 'lib',
@@ -30,7 +53,6 @@
       ],
     },
 
-    # link test
     {
       'target_name': 'test',
       'type': 'executable',

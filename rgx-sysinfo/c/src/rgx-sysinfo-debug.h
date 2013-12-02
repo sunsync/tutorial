@@ -12,6 +12,7 @@
 #define APP_LOG_ERROR(format, ...) APP_LOG_PRINT(LOG_ERR, format, ##__VA_ARGS__)
 #define APP_LOG_DEBUG(format, ...) APP_LOG_PRINT(LOG_DEBUG, format, ##__VA_ARGS__)
 #else /* APP_CONFIG_USE_SYSLOG */
+#include <stdio.h>
 #define APP_LOG_OPEN()
 #define APP_LOG_CLOSE()
 #define APP_LOG_PRINT(type, tag, format, ...) \
